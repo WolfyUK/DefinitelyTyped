@@ -2,7 +2,7 @@
 // Project: https://github.com/react-native-community/react-native-drawer-layout
 // Definitions by: Justin Firth <https://github.com/jmfirth>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-// TypeScript Version: 2.2
+// TypeScript Version: 2.6
 
 import * as React from 'react';
 import { ViewProperties } from 'react-native';
@@ -93,13 +93,17 @@ export interface DrawerLayoutProperties extends ViewProperties {
   useNativeAnimations?: boolean;
 }
 
-export default class DrawerLayout extends React.Component<DrawerLayoutProperties, {}> {
-  /**
-   * Opens the drawer.
-   */
-  openDrawer(): void;
-  /**
-   * Closes the drawer.
-   */
-  closeDrawer(): void;
+export default class DrawerLayout extends React.Component<DrawerLayoutProperties> {
+    static positions: {
+        Left: "left";
+        Right: "right";
+    };
+    /**
+     * Opens the drawer.
+     */
+    openDrawer(): void;
+    /**
+     * Closes the drawer.
+     */
+    closeDrawer(): void;
 }
